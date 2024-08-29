@@ -86,8 +86,8 @@ export default function App() {
   };
 
   return (
-    <div className="mb-5">
-      <div className="flex justify-center items-center">
+    <div className="flex flex-col  items-center justify-center space-y-4 p-4">
+      <div className="flex space-x-4 mb-4 items-end gap-3">
         <div>
           <Label htmlFor="color">Color</Label>
           <Input
@@ -101,7 +101,7 @@ export default function App() {
         <div>
           <Label htmlFor="brushSize">Brush Size</Label>
           <Input
-            type="text"
+            type="number"
             id="brushSize"
             value={brushSize}
             onChange={(e) => setBrushSize(Number(e.target.value))}
@@ -112,7 +112,7 @@ export default function App() {
         </div>
         <Button onClick={clearCanvas}>Clear Canvas</Button>
       </div>
-      <div className="mt-4">
+      <div>
         <canvas
           ref={canvasRef}
           width={800}
